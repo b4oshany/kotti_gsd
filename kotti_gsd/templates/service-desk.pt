@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      metal:use-macro="api.macro('kotti:templates/view/master.pt')">
+
+  <article metal:fill-slot="content"
+           class="content custom-content-alternative-view"
+           i18n:domain="kotti_gsd">
+
+      <h1>Service Desk for ${api.site_title}</h1>
+      <p>
+            Thank you for using ${api.site_title} Please complete the form below,
+            so we can provide quick and efficient service.
+            <tal:block tal:condition="contact_number is not None | False">
+                  If this is an urgent matter please contact Customer Support:
+                  ${contact_number}
+            </tal:block>
+      </p>
+      <form tal:replace="structure form.render()" />
+
+  </article>
+</html>

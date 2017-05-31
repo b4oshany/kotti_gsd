@@ -1,0 +1,7 @@
+<tal:block i18n:domain="Kotti">
+Subject: <tal:block i18n:translate=""><span tal:replace="subject | 'Reported Issue' " i18n:name="site_title" /></tal:block>
+<p tal:replace="structure message"></p>
+
+<p>This issue was reported on ${site_title}</p>
+
+</tal:block>
